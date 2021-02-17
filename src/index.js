@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import Routes from './Routes'
+import Layout from './Layout'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Routes />
+    <Layout />
   </React.StrictMode>,
   document.getElementById('root')
 );

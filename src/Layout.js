@@ -6,7 +6,7 @@ import Home from './views/Home'
 import PersonProfile from "./views/PersonProfile";
 import PlanetProfile from "./views/PlanetProfile";
 
-const Routes = () => {
+const Layout = () => {
   return (
     <BrowserRouter>
     <Navbar />
@@ -19,4 +19,4 @@ const Routes = () => {
   );
 };
 
-export default Routes;
+export default Layout;
