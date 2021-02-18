@@ -1,21 +1,31 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { Context } from "../store/AppContext";
 
-const PlanetProfile = () => {
-    return (
-        <div className="container">
-            <h1 className="breadcrumb">
-                Tatooine
-            </h1>
-            <h6 className="breadcrumb bg-warning">
-                A desert world, home of the Skywalkers
-            </h6>
-            <div className="row">
-                <div className="col">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sed atque quisquam perferendis ab reprehenderit natus? Itaque, ipsam! Veniam natus quam porro dolorem repellendus iusto quisquam quia officiis rerum. Veritatis explicabo earum quibusdam laudantium! Sequi quod totam voluptas quae reprehenderit ducimus minus iste beatae. A corporis saepe eligendi! Maxime, quibusdam.</p>
-                </div>
-            </div>
+const PlanetProfile = ({ match }) => {
+  console.log(match.params.id);
+  const { store, actions } = useContext(Context);
+
+  const planet = store.planets.filter((planet) => planet.created === match.params.id)[0];
+
+  return (
+    <div className="container">
+      <h1 className="breadcrumb">{planet.name}</h1>
+      <h6 className="breadcrumb bg-warning">Gravity: {planet.gravity}</h6>
+      <div className="row">
+        <div className="col">
+          <ul className="list-group" style={{ listStyle: "none" }}>
+            <li className="list-group-item">Population: {planet.population}</li>
+            <li className="list-group-item">Climate: {planet.climate}</li>
+            <li className="list-group-item">Terrain: {planet.terrain}</li>
+            <li className="list-group-item">Surface water: {planet.surface_water}</li>
+            <li className="list-group-item">Diameter: {planet.diameter}</li>
+            <li className="list-group-item">Orbital Period: {planet.orbital_period}</li>
+            <li className="list-group-item">Rotation Period: {planet.rotation_period}</li>
+          </ul>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default PlanetProfile
+export default PlanetProfile;
