@@ -11,8 +11,10 @@ const PlanetProfile = ({ match }) => {
     <div className="container">
       <h1 className="breadcrumb">{planet.name}</h1>
       <h6 className="breadcrumb bg-warning">Gravity: {planet.gravity}</h6>
-      <div className="row">
-        <div className="col">
+      <div className="d-flex flex-row">
+      <img style={{width:"38rem", height: "28rem", objectFit: "cover", objectPosition: "top"}} src={`${actions.getPlanetImage(planet)}`} alt=""/>
+      <div className="col">
+      <div className="col">
           <ul className="list-group" style={{ listStyle: "none" }}>
             <li className="list-group-item">Population: {planet.population}</li>
             <li className="list-group-item">Climate: {planet.climate}</li>
@@ -23,6 +25,7 @@ const PlanetProfile = ({ match }) => {
             <li className="list-group-item">Rotation Period: {planet.rotation_period}</li>
           </ul>
         </div>
+      </div>
       </div>
     </div>
   );

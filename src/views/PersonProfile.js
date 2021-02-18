@@ -14,8 +14,9 @@ const PersonProfile = ({ match }) => {
     <div className="container">
       <h1 className="breadcrumb">{person.name}</h1>
       <h6 className="breadcrumb bg-warning">Homeworld: {homeworld.name}</h6>
-      <img src="" alt=""/>
-      <div className="row">
+      <div className="d-flex flex-row">
+      <img style={{width:"38rem", height: "28rem", objectFit: "cover", objectPosition: "top"}} src={`${actions.getPersonImage(person)}`} alt=""/>
+      <div className="col">
         <div className="col">
           <ul className="list-group" style={{ listStyle: "none" }}>
             <li className="list-group-item">Birth year: {person.birth_year}</li>
@@ -28,6 +29,8 @@ const PersonProfile = ({ match }) => {
           </ul>
         </div>
       </div>
+      </div>
+      
     </div>
   );
 };
