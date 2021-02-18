@@ -66,6 +66,16 @@ const getState = ({getStore, setStore, getActions}) => {
           const updFavorites = favorites.filter(favorite => favorite !== input)
           setStore({favorites: [...updFavorites]})
           
+        },
+        getPersonImage: (input) => {
+            const filtered = getStore().peopleImages.filter(image => image.name === input.name)
+            const image = filtered.map(each=> each.url)[0]
+            return image
+        },
+        getPlanetImage: (input) => {
+            const filtered = getStore().planetImages.filter(image => image.name === input.name)
+            const image = filtered.map(each=> each.url)[0]
+            return image
         }
     },
   };

@@ -10,16 +10,10 @@ const { store, actions } = useContext(Context)
     actions.addFavorite(person)
   }
 
-  const getPersonImage = () => {
-    const filtered = store.peopleImages.filter(image => image.name === person.name)
-    const image = filtered.map(each=> each.url)[0]
-    return image
-  }
-
   return (
     <div className="col-xs-6 py-1">
       <div className="card" style={{ width: "12rem", height: "24rem"}}>
-        <img style={{height: "10rem", objectFit: "cover", objectPosition: "top"}} src={`${getPersonImage()}`} className="card-img-top" alt="A picture of Yoda" />
+        <img style={{height: "10rem", objectFit: "cover", objectPosition: "top"}} src={`${actions.getPersonImage(person)}`} className="card-img-top" alt="A picture of Yoda" />
         <div className="card-body d-flex flex-column justify-content-around">
           <h5 className="card-title">{person.name}</h5>
           <p className="card-text">Born: {person.birth_year}</p>

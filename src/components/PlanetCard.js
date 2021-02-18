@@ -4,19 +4,13 @@ import { Link } from "react-router-dom";
 
 const PlanetCard = ({ planet }) => {
 
-  const {store} = useContext(Context)
-
-  const getPlanetImage = () => {
-    const filtered = store.planetImages.filter(image => image.name === planet.name)
-    const image = filtered.map(each=> each.url)[0]
-    return image
-  }
+  const {actions} = useContext(Context)
 
   return (
     <div className="col-xs-6 py-1">
       <div className="card" style={{ width: "12rem", height: "32rem" }}>
 
-        <img style={{height: "10rem", objectFit: "cover", objectPosition: "top"}} src={`${getPlanetImage()}`} className="card-img-top" alt="A picture of the planet of the Wookies" />
+        <img style={{height: "10rem", objectFit: "cover", objectPosition: "top"}} src={`${actions.getPlanetImage(planet)}`} className="card-img-top" alt="A picture of the planet of the Wookies" />
 
         <div className="card-body d-flex flex-column justify-content-around">
           <h4 className="card-title">{planet.name}</h4>

@@ -14,6 +14,7 @@ const PersonProfile = ({ match }) => {
     <div className="container">
       <h1 className="breadcrumb">{person.name}</h1>
       <h6 className="breadcrumb bg-warning">Homeworld: {homeworld.name}</h6>
+      <img src="" alt=""/>
       <div className="row">
         <div className="col">
           <ul className="list-group" style={{ listStyle: "none" }}>
