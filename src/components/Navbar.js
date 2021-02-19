@@ -4,7 +4,7 @@ import Favorites from "./Favorites";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-dark bg-dark px-auto">
+    <nav className="navbar sticky-top navbar-dark bg-dark px-auto">
       <div className="col-6 d-flex flex-row sw-font">
         <span>StarWars</span>
       </div>

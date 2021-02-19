@@ -14,10 +14,13 @@ const PersonProfile = ({ match }) => {
     <div className="container">
       <h1 className="breadcrumb">{person.name}</h1>
       <h6 className="breadcrumb bg-warning">Homeworld: {homeworld.name}</h6>
-      <div className="d-flex flex-row">
-      <img style={{width:"38rem", height: "28rem", objectFit: "cover", objectPosition: "top"}} src={`${actions.getPersonImage(person)}`} alt=""/>
-      <div className="col">
-        <div className="col">
+
+      <div className="row d-flex flex-row">
+      <div className="col-8">
+      <img className="pb-5" style={{maxWidth:"100%", objectFit: "cover", objectPosition: "top"}} src={`${actions.getPersonImage(person)}`} alt=""/>
+      </div>
+      <div className="col-4">
+        
           <ul className="list-group" style={{ listStyle: "none" }}>
             <li className="list-group-item">Birth year: {person.birth_year}</li>
             <li className="list-group-item">Eye color: {person.eye_color}</li>
@@ -27,7 +30,7 @@ const PersonProfile = ({ match }) => {
             <li className="list-group-item">Mass: {person.mass}</li>
             <li className="list-group-item">Skin color: {person.skin_color}</li>
           </ul>
-        </div>
+       
       </div>
       </div>
       
