@@ -1,7 +1,7 @@
 const getState = ({getStore, setStore, getActions}) => {
   return {
     store: {
-      favorites: [],
+      favorites: JSON.parse(localStorage.getItem('favorites')) || [],
       planetImages : [
         {name: "Tatooine", url: "https://img.unocero.com/2020/01/nasa-descubre-planeta-tatooine.jpg"},
         {name: "Alderaan", url: "https://lumiere-a.akamaihd.net/v1/images/databank_alderaan_01_169_4a5264e2.jpeg?region=0%2C0%2C1560%2C780"},
@@ -58,12 +58,13 @@ const getState = ({getStore, setStore, getActions}) => {
           // Prevent duplicates
           if (favorites.some(favorite => favorite.created === input.created)) return
           const updFavorites = favorites.concat(input)
+          localStorage.setItem('favorites', JSON.stringify([...updFavorites]))
           setStore({favorites: [...updFavorites]})
-          
         },
         removeFavorite : input => {
           const favorites = getStore().favorites
           const updFavorites = favorites.filter(favorite => favorite !== input)
+          localStorage.setItem('favorites', JSON.stringify([...updFavorites]))
           setStore({favorites: [...updFavorites]})
           
         },
