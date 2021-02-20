@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Favorites from "./Favorites";
+import SearchBar from './SearchBar';
 
 const Navbar = () => {
   return (
@@ -12,6 +13,7 @@ const Navbar = () => {
         <Link to="/sw-blog/">
           <span className="navbar-brand mb-0 h1">Home</span>
         </Link>
+        <SearchBar />
         <Favorites />
       </div>
     </nav>

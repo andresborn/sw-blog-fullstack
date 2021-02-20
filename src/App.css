@@ -15,3 +15,15 @@
   font-family: "Poller One", cursive;
   text-shadow: -1px 0 #ffc107, 0 1px #ffc107, 1px 0 #ffc107, 0 -1px #ffc107;
 }
+
+.search-bar li {
+  width: 100%;
+  list-style-type: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.search-bar li :hover {
+  text-decoration: gray underline;
+}
