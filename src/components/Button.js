@@ -1,13 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const Button = ({ content, className, linkTo }) => {
+
+const Button = ({ content, className, type }) => {
     return (
-        <Link to={linkTo}>
-            <div style={{ width: "6rem" }} className={`btn ${className}`}>
+        
+            <button 
+            type={type}
+            style={{ width: "6rem" }} className={`btn ${className}`}>
                 {content}
-            </div>
-        </Link>
+            </button>
     );
 };
 export default Button;

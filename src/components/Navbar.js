@@ -31,10 +31,14 @@ const Navbar = ({}) => {
             </Link>
           </li>
           <li className="nav-item nav-link mr-auto">
-            <Button linkTo="/sw-blog/register" content="Register" className="btn-secondary" />
+          <Link to="/sw-blog/register">
+          <Button content="Register" className="btn-secondary" />
+          </Link>
           </li>
           <li className="nav-item nav-link mr-auto">
-            <Button linkTo="/sw-blog/login" content="Log In" className="btn-warning" />
+          <Link to="/sw-blog/login">
+          <Button content="Log In" className="btn-warning" />
+          </Link>
           </li>
           <li className="nav-item nav-link mr-auto">
             <Favorites />
