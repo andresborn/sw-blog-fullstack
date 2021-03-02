@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
-
-const Button = ({content, className}) => {
+const Button = ({ content, className, linkTo }) => {
     return (
-        <div style={{width:'6rem'}} className={`btn ${className}`}>
-            {content}
-        </div>
-    )
-}
-export default Button
+        <Link to={linkTo}>
+            <div style={{ width: "6rem" }} className={`btn ${className}`}>
+                {content}
+            </div>
+        </Link>
+    );
+};
+export default Button;
