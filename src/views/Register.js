@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from '../store/AppContext'
 import Button from "../components/Button";
 
 const Register = () => {
@@ -6,9 +7,17 @@ const Register = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    const handleSubmit = e => {
+    const { actions } = useContext(Context);
+
+    const handleSubmit = async e => {
         e.preventDefault()
-        console.log(username, email, password)
+        if (username === "" || email === "" || password === "") return alert("Please fill in the required form")
+
+        const info = {"username": username, "email": email, "password": password}
+
+        const response = await actions.postData('https://3000-pink-skunk-wepde99x.ws-us03.gitpod.io/register', info)
+
+        if (response.error) return alert(response.error)
     }
 
 
