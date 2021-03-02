@@ -1,11 +1,13 @@
 import React, { useState, useContext } from "react";
 import { Context } from '../store/AppContext'
 import Button from "../components/Button";
+import { Redirect } from 'react-router-dom'
 
 const Register = () => {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [redirect, setRedirect] = useState(false)
 
     const { actions } = useContext(Context);
 
@@ -18,6 +20,8 @@ const Register = () => {
         const response = await actions.postData('https://3000-pink-skunk-wepde99x.ws-us03.gitpod.io/register', info)
 
         if (response.error) return alert(response.error)
+
+        setRedirect(true)
     }
 
 
@@ -68,6 +72,7 @@ const Register = () => {
                     content="Register" className="btn-secondary"/>
                 </form>
             </div>
+            {redirect && <Redirect to="/sw-blog/login" />}
         </div>
     );
 };
