@@ -31,6 +31,7 @@ const SearchBar = () => {
             type="search"
             onChange={e => onChange(e)}
             value={input}
+            placeholder="Search"
             />
             <ul style={{left:'auto'}} className="search-bar list dropdown-menu">
                 {suggestions.map((each, i) => 
