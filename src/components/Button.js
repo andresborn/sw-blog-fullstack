@@ -3,7 +3,7 @@ import React from 'react'
 
 const Button = ({content, className}) => {
     return (
-        <div className={`btn ${className}`}>
+        <div style={{width:'6rem'}} className={`btn ${className}`}>
             {content}
         </div>
     )
