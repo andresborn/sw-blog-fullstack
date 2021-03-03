@@ -13,14 +13,10 @@ const Register = () => {
 
     const handleSubmit = async e => {
         e.preventDefault()
-        if (username === "" || email === "" || password === "") return alert("Please fill in the required form")
-
+        if (username === "" || email === "" || password === "") return alert("Please fill the required information")
         const info = {"username": username, "email": email, "password": password}
-
         const response = await actions.postData('https://3000-pink-skunk-wepde99x.ws-us03.gitpod.io/register', info)
-
         if (response.error) return alert(response.error)
-
         setRedirect(true)
     }
 

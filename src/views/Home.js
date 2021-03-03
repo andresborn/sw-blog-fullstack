@@ -1,10 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import PersonCard from "../components/PersonCard";
 import PlanetCard from "../components/PlanetCard";
 import { Context } from "../store/AppContext";
 
 const Home = () => {
   const { store, actions } = useContext(Context);
+
+  useEffect(() => {
+    actions.fetchAndSetFavorites()
+  }, [])
 
   return (
     <div className="container my-2">
