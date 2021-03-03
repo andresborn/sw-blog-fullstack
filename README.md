@@ -1,4 +1,5 @@
-# StarWars Blog with React
+# StarWars Blog with React and our API
 
-See the live version at:
-https://andresborn.github.io/sw-blog
+This version is a continuation of the original sw-blog.
+This one has been updated to use a StarWars API we created.
+It requires authentication in order to save your favorite characters.
