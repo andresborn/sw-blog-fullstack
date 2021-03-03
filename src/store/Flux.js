@@ -117,11 +117,8 @@ const getState = ({ getStore, setStore, getActions }) => {
                         "https://3000-pink-skunk-wepde99x.ws-us03.gitpod.io/person"
                     );
 
-                    const planetsData = await planetsRes.json();
-                    const peopleData = await peopleRes.json();
-
-                    const planets = planetsData.results;
-                    const people = peopleData.results;
+                    const planets = await planetsRes.json();
+                    const people = await peopleRes.json();
 
                     setStore({ planets, people });
                 };
