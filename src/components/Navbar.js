@@ -24,19 +24,19 @@ const Navbar = ({}) => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active d-flex align-items-center">
-            <Link to="/sw-blog/">
+            <Link to="/sw-blog-fullstack/">
               <span className="text-white nav-item nav-link">
                 Home
               </span>
             </Link>
           </li>
           <li className="nav-item nav-link mr-auto">
-          <Link to="/sw-blog/register">
+          <Link to="/sw-blog-fullstack/register">
           <Button content="Register" className="btn-secondary" />
           </Link>
           </li>
           <li className="nav-item nav-link mr-auto">
-          <Link to="/sw-blog/login">
+          <Link to="/sw-blog-fullstack/login">
           <Button content="Log In" className="btn-warning" />
           </Link>
           </li>

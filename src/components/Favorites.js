@@ -30,7 +30,7 @@ const Favorites = () => {
               className="dropdown-item d-flex flex-row justify-content-between"
               type="button"
             >
-              {favorite.name}
+              {favorite.person_name || favorite.name}
               <button
                 onClick={() => removeHandler(favorite)}
                 type="button"

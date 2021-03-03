@@ -55,7 +55,7 @@ const Login = () => {
                     <Button type="submit" content="Log In" className="btn-warning" />
                 </form>
             </div>
-            {redirect && <Redirect to="/sw-blog/" />}
+            {redirect && <Redirect to="/sw-blog-fullstack/" />}
         </div>
     );
 };

@@ -68,7 +68,7 @@ const Register = () => {
                     content="Register" className="btn-secondary"/>
                 </form>
             </div>
-            {redirect && <Redirect to="/sw-blog/login" />}
+            {redirect && <Redirect to="/sw-blog-fullstack/login" />}
         </div>
     );
 };
