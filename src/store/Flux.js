@@ -111,10 +111,10 @@ const getState = ({ getStore, setStore, getActions }) => {
             fetchAndSetData: () => {
                 const getData = async () => {
                     const planetsRes = await fetch(
-                        "https://swapi.dev/api/planets"
+                        "https://3000-pink-skunk-wepde99x.ws-us03.gitpod.io/planet"
                     );
                     const peopleRes = await fetch(
-                        "https://swapi.dev/api/people"
+                        "https://3000-pink-skunk-wepde99x.ws-us03.gitpod.io/person"
                     );
 
                     const planetsData = await planetsRes.json();

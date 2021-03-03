@@ -20,11 +20,11 @@ const Layout = () => {
       <BrowserRouter>
     <Navbar />
       <Switch>
-        <Route exact path="/sw-blog/" component={Home} />
-        <Route exact path="/sw-blog/person/:id" component={PersonProfile} />
-        <Route exact path="/sw-blog/planet/:id" component={PlanetProfile} />
-        <Route exact path="/sw-blog/register/" component={Register} />
-        <Route exact path="/sw-blog/login/" component={Login} />
+        <Route exact path="/sw-blog-fullstack/" component={Home} />
+        <Route exact path="/sw-blog-fullstack/person/:id" component={PersonProfile} />
+        <Route exact path="/sw-blog-fullstack/planet/:id" component={PlanetProfile} />
+        <Route exact path="/sw-blog-fullstack/register/" component={Register} />
+        <Route exact path="/sw-blog-fullstack/login/" component={Login} />
       </Switch>
     </BrowserRouter>
     </div>

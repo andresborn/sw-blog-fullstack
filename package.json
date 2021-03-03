@@ -1,6 +1,6 @@
 {
-  "homepage": "https://andresborn.github.io/sw-blog",
-  "name": "sw-blog",
+  "homepage": "https://andresborn.github.io/sw-blog-fullstack",
+  "name": "sw-blog-fullstack",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
