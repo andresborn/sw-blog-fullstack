@@ -4,10 +4,7 @@ import { Context } from "../store/AppContext";
 const PersonProfile = ({ match }) => {
   const { store, actions } = useContext(Context);
   const person = store.people.filter(
-    person => person.created === match.params.id
-  )[0];
-  const homeworld = store.planets.filter(
-    planet => person.homeworld === planet.url
+    person => person.id === parseFloat(match.params.id)
   )[0];
 
   return (
@@ -16,11 +13,11 @@ const PersonProfile = ({ match }) => {
       { // Obi-Wan is missing planet, conditionally render out his homeworld
         person.name === "Obi-Wan Kenobi" 
         ? null 
-        : <h6 className="breadcrumb bg-warning">Homeworld: {homeworld.name}</h6>
+        : <h6 className="breadcrumb bg-warning">Homeworld: {person.homeworld}</h6>
         }
       <div className="row d-flex flex-column">
       <div className="col-12">
-      <img className="pb-5" style={{maxWidth:"100%", objectFit: "cover", objectPosition: "top"}} src={`${actions.getPersonImage(person)}`} alt=""/>
+      <img className="pb-5" style={{maxWidth:"100%", objectFit: "cover", objectPosition: "top"}} src={person.pic} alt=""/>
       </div>
       <div className="col-12">
         
