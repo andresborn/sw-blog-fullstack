@@ -5,7 +5,7 @@ const PlanetProfile = ({ match }) => {
   console.log(match.params.id);
   const { store, actions } = useContext(Context);
 
-  const planet = store.planets.filter((planet) => planet.created === match.params.id)[0];
+  const planet = store.planets.filter((planet) => planet.id === parseFloat(match.params.id))[0];
 
   return (
     <div className="container">
@@ -13,7 +13,7 @@ const PlanetProfile = ({ match }) => {
       <h6 className="breadcrumb bg-warning">Gravity: {planet.gravity}</h6>
       <div className="d-flex flex-column">
       <div className="col-12">
-        <img className="pb-5" style={{maxWidth:"100%", objectFit: "cover", objectPosition: "top"}} src={`${actions.getPlanetImage(planet)}`} alt=""/>
+        <img className="pb-5" style={{maxWidth:"100%", objectFit: "cover", objectPosition: "top"}} src={planet.pic} alt=""/>
       </div> 
       <div className="col-12">
           <ul className="list-group" style={{ listStyle: "none" }}>
